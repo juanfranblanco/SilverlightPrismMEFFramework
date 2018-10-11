@@ -1,0 +1,99 @@
+﻿<prism:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism">
+
+
+    <prism:ModuleInfo Ref="Policy.Shell.Menu.xap"
+                      ModuleName="Policy.Shell.Menu.ModuleInit"
+                      ModuleType="Policy.Shell.Menu.ModuleInit, Policy.Shell.Menu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+    </prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="Policy.Detail.xap"
+                      ModuleName="Policy.Detail.ModuleInit"
+                      ModuleType="Policy.Detail.ModuleInit, Policy.Detail, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>Policy.Shell.Menu.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="QuotationEntry.Wizard.xap"
+                      ModuleName="QuotationEntry.Wizard.ModuleInit"
+                      ModuleType="QuotationEntry.Wizard.ModuleInit, QuotationEntry.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>QuotationEntry.LastStep.ModuleInit</sys:String>
+            <sys:String>QuotationEntry.PolicyDetail.ModuleInit</sys:String>
+            <sys:String>QuotationEntry.PreInception.ModuleInit</sys:String>
+            <sys:String>QuotationEntry.RiskQuality.ModuleInit</sys:String>
+            <sys:String>QuotationEntry.Navigator.ModuleInit</sys:String>
+            <sys:String>Policy.Shell.Menu.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+
+    <prism:ModuleInfo Ref="QuotationEntry.PolicyDetail.xap"
+                      ModuleName="QuotationEntry.PolicyDetail.ModuleInit"
+                      ModuleType="QuotationEntry.PolicyDetail.ModuleInit, QuotationEntry.PolicyDetail, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>QuotationEntry.Navigator.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="QuotationEntry.PreInception.xap"
+                      ModuleName="QuotationEntry.PreInception.ModuleInit"
+                      ModuleType="QuotationEntry.PreInception.ModuleInit, QuotationEntry.PreInception, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>QuotationEntry.Navigator.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="QuotationEntry.RiskQuality.xap"
+                      ModuleName="QuotationEntry.RiskQuality.ModuleInit"
+                      ModuleType="QuotationEntry.RiskQuality.ModuleInit, QuotationEntry.RiskQuality, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>QuotationEntry.Navigator.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+
+    <prism:ModuleInfo Ref="QuotationEntry.LastStep.xap"
+                      ModuleName="QuotationEntry.LastStep.ModuleInit"
+                      ModuleType="QuotationEntry.LastStep.ModuleInit, QuotationEntry.LastStep, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>QuotationEntry.Navigator.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+
+    <prism:ModuleInfo Ref="QuotationEntry.Navigator.xap"
+                      ModuleName="QuotationEntry.Navigator.ModuleInit"
+                      ModuleType="QuotationEntry.Navigator.ModuleInit, QuotationEntry.Navigator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+    </prism:ModuleInfo>
+
+
+    <prism:ModuleInfo Ref="ClaimsModule.xap"
+                      ModuleName="ClaimsModule.ModuleInit"
+                      ModuleType="ClaimsModule.ModuleInit, ClaimsModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>Policy.Shell.Menu.ModuleInit</sys:String>
+            <sys:String>ClaimsModule.WebServiceMock.ModuleInit</sys:String>
+        </prism:ModuleInfo.DependsOn>
+    </prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="ClaimsModule.WebServiceMock.xap"
+                      ModuleName="ClaimsModule.WebServiceMock.ModuleInit"
+                      ModuleType="ClaimsModule.WebServiceMock.ModuleInit, ClaimsModule.WebServiceMock, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                      InitializationMode="WhenAvailable">
+    </prism:ModuleInfo>
+
+</prism:ModuleCatalog>
+

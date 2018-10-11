@@ -1,0 +1,47 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Policy.Search.Views.PolicySearchResultsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Commands="clr-namespace:Infrastructure.Core.Commands;assembly=Infrastructure.Core" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
+
+	<UserControl.Resources>
+		<Commands:ObservableCommand x:Name="OpenPolicyCommand" Value="{Binding OpenPolicyCommand}" />
+
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+			<TextBlock Text="Results for the search of:"></TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <TextBlock  Text="Company Name: '"></TextBlock>
+                    <TextBlock  Text="{Binding PolicySearchResult.PolicySearch.CompanyNameSearch}"></TextBlock>
+                    <TextBlock  Text="', Policy Id: '"></TextBlock>
+                    <TextBlock  Text="{Binding PolicySearchResult.PolicySearch.PolicyId}"></TextBlock>
+                    <TextBlock  Text="'"></TextBlock>
+            </StackPanel>
+		</StackPanel>
+
+		<sdk:DataGrid x:Name="datagrid" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Policies}"  Margin="6">
+			<sdk:DataGrid.Columns>
+				<sdk:DataGridTemplateColumn CanUserReorder="False" CanUserResize="True" CanUserSort="True" Width="Auto">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Command="{Binding Value, Source={StaticResource OpenPolicyCommand}}" CommandParameter="{Binding}" Margin="5,2,2,2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" AutomationProperties.AutomationId="OpenButton" Style="{StaticResource NormalButton}">
+								Open
+							</Button>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+				<sdk:DataGridTextColumn Header="Policy Id" Binding="{Binding Path=PolicyId}" Width="Auto" />
+				<sdk:DataGridTextColumn Header="Company Name" Binding="{Binding Path=CompanyName}" Width="Auto" />
+				<sdk:DataGridTextColumn Header="Description" Binding="{Binding Path=Description}" Width="Auto" />
+			</sdk:DataGrid.Columns>
+		</sdk:DataGrid>
+
+
+	</Grid>
+</UserControl>

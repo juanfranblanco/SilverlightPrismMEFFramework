@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="When a step is completed and event gets raised, so other areas in the system can be enabled or disabled (ie the menu)">
+    <Position X="21.208" Y="7.797" Height="1.228" Width="1.7" />
+  </Comment>
+  <Comment CommentText="The wizard uses the step service to get the correspondent step for the active view, and check if is the first, last etc.">
+    <Position X="7.004" Y="3.862" Height="1.228" Width="1.7" />
+  </Comment>
+  <Comment CommentText="When a step is completed the wizard calls the progress service to set the status if required.">
+    <Position X="4.187" Y="8.737" Height="1.228" Width="1.7" />
+  </Comment>
+  <Comment CommentText="The Quotation Wizard navigator, navigates the views to the wizard detail region, it also extracts the parameters (policyId) from the request.">
+    <Position X="14.266" Y="10.815" Height="1.228" Width="1.7" />
+  </Comment>
+  <Comment CommentText="A repository needs to be created with all the different steps for the wizard, instead of  each module registering an step. The ViewTargetNames and even the repository can be in a contract project.">
+    <Position X="18.25" Y="1.043" Height="1.138" Width="2.76" />
+  </Comment>
+  <Class Name="Policy.Shell.Menu.ViewModel.QuotationDetailWizardViewModel">
+    <Position X="9.75" Y="13.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAQAAAAAA=</HashCode>
+      <FileName>ViewModels\QuotationDetailWizardViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Policy.Shell.Menu.ViewModel.QuotationWizardStepRepository">
+    <Position X="18.25" Y="3" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Services\QuotationWizardStepRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Policy.Shell.Menu.ViewModel.QuotationWizardStepProgressService">
+    <Position X="16.5" Y="6.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQQ=</HashCode>
+      <FileName>Services\QuotationWizardStepProgressService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Wizard.ViewModel.WizardViewModel&lt;TWizardContext&gt;">
+    <Position X="0.5" Y="7.5" Width="2.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="WizardStepsService" />
+      <Property Name="WizardNavigator" />
+      <Property Name="WizardStepProgressService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Wizard.Services.WizardStepService">
+    <Position X="9.25" Y="3" Width="3" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="WizardStepRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Policy.Shell.Menu.ViewModel.IQuotationWizardStepProgressService">
+    <Position X="10.75" Y="7" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IQuotationWizardStepProgressService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Wizard.Contracts.Services.IWizardStepRepository" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Infrastructure.Wizard.Contracts.Services.IWizardStepsService">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Infrastructure.Wizard.Contracts.Navigator.IWizardNavigator&lt;TWizardContext&gt;">
+    <Position X="11.25" Y="10.75" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Infrastructure.Wizard.Contracts.Services.IWizardStepProgressService&lt;TWizardContext&gt;">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

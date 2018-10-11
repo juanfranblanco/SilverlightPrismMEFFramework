@@ -1,0 +1,52 @@
+﻿<prism:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism">
+
+    <prism:ModuleInfo Ref="Infrastructure.State.Service.xap" ModuleName="Infrastructure.State.Service.ModuleInit" ModuleType="Infrastructure.State.Service.ModuleInit, Infrastructure.State.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable"></prism:ModuleInfo>
+
+	<prism:ModuleInfo Ref="Infrastructure.MessageBox.Service.xap" ModuleName="Infrastructure.MessageBox.Service.ModuleInit" ModuleType="Infrastructure.MessageBox.Service.ModuleInit, Infrastructure.MessageBox.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable"></prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="Application.Menu.xap" ModuleName="Application.Menu.ModuleInit" ModuleType="Application.Menu.ModuleInit, Application.Menu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable"></prism:ModuleInfo>
+    
+    <prism:ModuleInfo Ref="Policy.Shell.xap" ModuleName="Policy.Shell.ModuleInit" ModuleType="Policy.Shell.ModuleInit, Policy.Shell, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable">
+		<prism:ModuleInfo.DependsOn>
+			<sys:String>
+				Infrastructure.State.Service.ModuleInit
+			</sys:String>
+			<sys:String>
+				Infrastructure.MessageBox.Service.ModuleInit
+			</sys:String>
+		</prism:ModuleInfo.DependsOn>
+	</prism:ModuleInfo>
+
+	<prism:ModuleInfo Ref="Policy.Search.xap" ModuleName="Policy.Search.ModuleInit" ModuleType="Policy.Search.ModuleInit, Policy.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable">
+		<prism:ModuleInfo.DependsOn>
+			<sys:String>
+				Policy.Shell.ModuleInit
+			</sys:String>
+			<sys:String>
+				Policy.Search.WebService.Mock.ModuleInit
+			</sys:String>
+			<sys:String>
+				Application.Menu.ModuleInit
+			</sys:String>
+		</prism:ModuleInfo.DependsOn>
+	</prism:ModuleInfo>
+
+	
+
+
+	<prism:ModuleInfo Ref="Policy.Search.WebService.Mock.xap" ModuleName="Policy.Search.WebService.Mock.ModuleInit" ModuleType="Policy.Search.WebService.Mock.ModuleInit, Policy.Search.WebService.Mock, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable"></prism:ModuleInfo>
+
+    <prism:ModuleInfo Ref="AboutModule.xap" ModuleName="AboutModule.ModuleInit" ModuleType="AboutModule.ModuleInit, AboutModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" InitializationMode="WhenAvailable">
+        <prism:ModuleInfo.DependsOn>
+            <sys:String>
+                Application.Menu.ModuleInit
+            </sys:String>
+            <sys:String>
+                Infrastructure.MessageBox.Service.ModuleInit
+            </sys:String>
+        </prism:ModuleInfo.DependsOn>
+       
+    </prism:ModuleInfo>
+
+
+</prism:ModuleCatalog>

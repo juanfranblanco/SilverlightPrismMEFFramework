@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D37F879-D0EF-4349-8A5B-F2DC821DE1D2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebHosting</RootNamespace>
+    <AssemblyName>WebHosting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SilverlightApplicationList>{1CA00913-8890-4FB9-AF2A-FCD87C4D69BC}|..\..\Shell\Application.Shell\Application.Shell.csproj|ClientBin|False,{F5713E90-818F-4F9C-AFDB-71254CFD6631}|..\..\Shell\Application.Menu\Application.Menu.csproj|ClientBin|False,{0E5E75F6-6AC1-4DEE-9AED-B4B0E9B0FBC2}|..\..\..\Infrastructure\State\Infrastructure.State.Service\Infrastructure.State.Service.csproj|ClientBin|False,{D3D5DC69-785D-459A-836A-47E8F305E0E2}|..\..\..\Infrastructure\MessageBox\Infrastructure.MessageBox.Service\Infrastructure.MessageBox.Service.csproj|ClientBin|False,{C3A4EFDB-42AB-466D-BEA0-3D85FB72608D}|..\..\Modules\Policy\PolicyDetail\Policy.Detail\Policy.Detail.csproj|ClientBin|False,{B13D2AA7-D1AE-4E8B-B09A-2BA0C4349E91}|..\..\Modules\Policy\PolicySearch\Policy.Search\Policy.Search.csproj|ClientBin|False,{170640C3-DEF4-4E4E-B88B-D5C63297CF0D}|..\..\Modules\Policy\PolicySearch\Policy.Search.WebService.Mock\Policy.Search.WebService.Mock.csproj|ClientBin|False,{11097F9C-9D9F-4DD6-AD13-4E8B5516F2F0}|..\..\Modules\Policy\PolicyWindowShell\Policy.Shell\Policy.Shell.csproj|ClientBin|False,{775EF57D-9EDD-4D0B-B4C8-396DE9208B6B}|..\..\Modules\Policy\PolicyWindowShell\Policy.Shell.Menu\Policy.Shell.Menu.csproj|ClientBin|False,{58A0760F-0A3E-4E8A-A1CF-B7568A47B815}|..\..\Modules\Claims\ClaimsModule\ClaimsModule.csproj|ClientBin|False,{01BF9C03-79FD-48A6-987E-7BDEA01A4725}|..\..\Modules\Claims\ClaimsModule.WebServiceMock\ClaimsModule.WebServiceMock.csproj|ClientBin|False,{DFFA8194-8215-43C1-A559-6A3C70CEB056}|..\..\Modules\About\AboutModule\AboutModule.csproj|ClientBin|False,{CE068133-A0F4-41C7-95D6-4DD350836E92}|..\..\Modules\Wizard\QuotationEntry.Wizard\QuotationEntry.Wizard.csproj|ClientBin|False,{E70BEAC2-4522-4937-999A-8718A61F57DD}|..\..\Modules\Wizard\QuotationEntry.PolicyDetail\QuotationEntry.PolicyDetail.csproj|ClientBin|False,{DBFA9B50-3535-4E39-9FDF-EE5E731D2653}|..\..\Modules\Wizard\QuotationEntry.Navigator\QuotationEntry.Navigator.csproj|ClientBin|False,{9E678617-4475-482B-AE8C-8695E70813E0}|..\..\Modules\Wizard\QuotationEntry.RiskQuality\QuotationEntry.RiskQuality.csproj|ClientBin|False,{89D1508F-668C-4907-951B-789E23F15FF1}|..\..\Modules\Wizard\QuotationEntry.PreInception\QuotationEntry.PreInception.csproj|ClientBin|False,{46A14E53-0160-41D5-AE34-84266B76217B}|..\..\Modules\Wizard\QuotationEntry.LastStep\QuotationEntry.LastStep.csproj|ClientBin|False</SilverlightApplicationList>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application.ShellTestPage.aspx" />
+    <Content Include="Application.ShellTestPage.html" />
+    <Content Include="ClientBin\AboutModule.xap" />
+    <Content Include="ClientBin\Application.Menu.xap" />
+    <Content Include="ClientBin\Application.Shell.xap" />
+    <Content Include="ClientBin\ClaimsModule.WebServiceMock.xap" />
+    <Content Include="ClientBin\ClaimsModule.xap" />
+    <Content Include="ClientBin\Infrastructure.MessageBox.Service.xap" />
+    <Content Include="ClientBin\Infrastructure.State.Service.xap" />
+    <Content Include="ClientBin\Policy.Detail.xap" />
+    <Content Include="ClientBin\Policy.Search.WebService.Mock.xap" />
+    <Content Include="ClientBin\Policy.Search.xap" />
+    <Content Include="ClientBin\Policy.Shell.Menu.xap" />
+    <Content Include="ClientBin\Policy.Shell.xap" />
+    <Content Include="ClientBin\QuotationEntry.LastStep.xap" />
+    <Content Include="ClientBin\QuotationEntry.Navigator.xap" />
+    <Content Include="ClientBin\QuotationEntry.PolicyDetail.xap" />
+    <Content Include="ClientBin\QuotationEntry.PreInception.xap" />
+    <Content Include="ClientBin\QuotationEntry.RiskQuality.xap" />
+    <Content Include="ClientBin\QuotationEntry.Wizard.xap" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4899</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

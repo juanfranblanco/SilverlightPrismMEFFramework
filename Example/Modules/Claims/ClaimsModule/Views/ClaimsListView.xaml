@@ -1,0 +1,42 @@
+<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="ClaimsModule.Views.ClaimListView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Commands="clr-namespace:Infrastructure.Core.Commands;assembly=Infrastructure.Core" mc:Ignorable="d" d:DesignHeight="160" d:DesignWidth="160">
+
+	<UserControl.Resources>
+		<Commands:ObservableCommand x:Name="OpenClaimCommand" Value="{Binding OpenClaimCommand}" />
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="Claims" TextWrapping="Wrap" FontSize="16" Foreground="#FF2F3806" Margin="4" />
+
+
+		<sdk:DataGrid x:Name="datagrid" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Claims}" Margin="6">
+			<sdk:DataGrid.Columns>
+				<sdk:DataGridTemplateColumn CanUserReorder="False" CanUserResize="True" CanUserSort="True" Width="Auto">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+
+							<Button Style="{StaticResource NormalButton}" Command="{Binding Value, Source={StaticResource OpenClaimCommand}}" CommandParameter="{Binding}" Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" AutomationProperties.AutomationId="OpenButton">
+								Open</Button>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+				
+				<sdk:DataGridTextColumn Header="ClaimNumber" Binding="{Binding Path=ClaimNumber}" Width="Auto" />
+				<sdk:DataGridTextColumn Header="ClaimPrefix" Binding="{Binding Path=ClaimPrefix}" Width="Auto" />
+				<sdk:DataGridTextColumn Header="ClaimSufix" Binding="{Binding Path=ClaimSufix}" Width="Auto" />
+				
+
+			</sdk:DataGrid.Columns>
+		</sdk:DataGrid>
+
+
+	</Grid>
+
+</UserControl>
